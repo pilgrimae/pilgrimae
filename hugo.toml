@@ -1,0 +1,93 @@
+baseURL = "/"
+
+title = "𝕡𝕚𝕝𝕘𝕣𝕚𝕞𝕒𝕖 ☰ 前路"
+theme = "gokarna"
+
+defaultContentLanguage = "en"
+languageCode = "en"
+
+capitalizeListTitles = false
+titleCaseStyle = "none"
+
+enableRobotsTXT = true
+
+[params]
+  avatarURL = "/images/pilgrimae.png"
+  avatarSize = "size-m"
+  avatarAltText = "pilgrimae"
+  image = "/images/og.png"
+  description = "together we walk the sacred path before us"
+  accentColor = "#b3332e"
+  metaKeywords = ["pilgrimage", "spiritual path", "walk talk meditate", "japan", "shikoku", "kumano kodo", "temples", "shrines"]
+  customHeadHTML = '''
+    <script>
+      function rubber(hash) {
+        if (hash === undefined) {
+          return;
+        }
+        if (location.hash == "#" + hash) {
+          location.hash = "#";
+        } else {
+          location.hash = "#" + hash;
+        }
+        if (typeof window.beam === "function") {
+          window.beam(`/type/hash/${hash}`);
+        }
+      }
+
+      function duck(event) {
+        if (typeof window.beam === "function") {
+          window.beam(`/type/${event}`);
+        }
+      }
+
+      function isBot(userAgent) {
+        const botPatterns = [
+          'bot',
+          'spider',
+          'crawler',
+          'googlebot',
+          'baiduspider',
+          'bingbot',
+          'yandexbot'
+        ];
+        const lowerUA = userAgent.toLowerCase();
+        return botPatterns.some(pattern => lowerUA.includes(pattern));
+      }
+
+      window.onhashchange = rubber();
+      $.getJSON("/data/samadhi.json", function (lines) {
+        var samadhi = lines.join("\n");
+        console.log(`%c${samadhi}`, 'background: #2d333b; color: #ebc400')
+      });
+
+      var documentTitle = `pilgrimae ☰ 前路 ☰ `;
+      var isRoot = location.pathname == "/";
+      (function titleMarquee() {
+        if (isRoot && !isBot(navigator.userAgent)) {
+          document.title = documentTitle = documentTitle.substring(1) + documentTitle.substring(0,1);
+          setTimeout(titleMarquee, 777);
+        }
+      })();
+    </script>
+  '''
+
+[menu]
+  [[menu.main]]
+    identifier = "youtube"
+    url = "https://youtube.com/@pilgrimae"
+    weight = 1
+    pre = "<span data-feather='youtube'></span>"
+  [[menu.main]]
+    identifier = "instagram"
+    url = "https://instagram.com/pilgrima.ge"
+    weight = 2
+    pre = "<span data-feather='instagram'></span>"
+  [[menu.main]]
+    identifier = "substack"
+    url = "https://patreon.com/pilgrimae"
+    weight = 3
+    pre = "<span data-feather='bookmark'></span>"
+
+[outputs]
+  home = ["HTML", "RSS"]

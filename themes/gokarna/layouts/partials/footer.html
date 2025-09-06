@@ -1,0 +1,16 @@
+<footer id="lotus-feet" class="footer">
+  <!-- Option for user to inject custom html -->
+  {{ if .Site.Params.CustomFooterHTML }}
+  {{ .Site.Params.CustomFooterHTML | safeHTML }}
+  {{ end }}
+
+  {{ if .Site.Params.footer }}
+  <span>&copy; {{ now.Year }} {{ .Site.Params.Footer}}</span>
+  {{ end }}
+
+  <hr>
+  <div class="hover-text">
+    <a id="pilgrimae" href="#sahasrara">𝕡𝕚𝕝𝕘𝕣𝕚𝕞𝕒𝕖 ☰ 前路</a>
+    <span class="tooltip-text footer-top">pilgrimae</span>
+  </div>
+</footer>

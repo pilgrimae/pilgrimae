@@ -1,0 +1,171 @@
+{{ define "main" }}
+<section class="home-about">
+  <div id="sahasrara" class="main-avatar avatar">
+    {{ if isset .Site.Params "avatarurl" }}
+    <img id="avatar" class={{ .Site.Params.AvatarSize | default "size-m" }} src='{{ .Scratch.Get "avatarImgSrc" }}'
+      alt="{{ .Site.Params.AvatarAltText|default " avatar" }}">
+    {{ end }}
+  </div>
+
+  <h1>{{ .Site.Title }}</h1>
+  {{ if isset .Site.Params "description" }}
+  <h3>{{ .Site.Params.Description }}</h3>
+  {{ end }}
+
+</section>
+
+<div class="flex-break"></div>
+
+{{ if isset .Site.Params "socialicons" }}
+<div class="social-icons">
+  <ul class="social-icons-list">
+    {{ range .Site.Params.SocialIcons }}
+    <li class="social-icon">
+      <a href="{{ .url }}" {{ if .rel }}rel="{{ .rel }}" {{ end }} aria-label="learn more on {{ .name }}">
+        <img class="svg-inject" src="/svg/icons/{{ .name }}.svg" alt="">
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+{{ if os.FileExists "index-about.md" }}
+<div class="markdown-content">
+  {{ readFile "index-about.md" | markdownify }}
+</div>
+{{ end }}
+
+<div class="home-content">
+  <div id="path777" class="duck-break" onClick="rubber('空践');">☷☵☲<a href="#空践">☰</a>☲☵☷</div>
+
+  <div id="空践">
+    <p>for those who feel the pull—not to escape, but to return.</p>
+    <p>to walk slowly. to speak honestly. to remember through presence.</p>
+    <br />
+    <p>we bring together no more than <strong>twelve</strong> souls at a time</p>
+    <p>to walk the sacred paths of 日本—led by a spiritual teacher, healer, or guide</p>
+    <p>who holds space rather than stage.</p>
+    <p>denomination doesn’t matter. presence does.</p>
+    <br />
+    <p>this is not a retreat. not a tour.</p>
+    <p>this is a pilgrimage.</p>
+    <p>we go not just to move—but to be moved.</p>
+  </div>
+
+  <div id="path7777" class="duck-break" onClick="rubber('準備');">☷☵☲<a href="#準備">☰</a>☲☵☷</div>
+
+  <div id="歩">
+    <h3>how we walk</h3>
+    <p>in 日本, pilgrimage is encoded in the land.</p>
+    <p>四国’s 88 temples.</p>
+    <p>the ancient trails of 熊野古道.</p>
+    <p>the quiet wisdom that says:</p>
+    <code>the environment is greater than one’s will.</code>
+    <br />
+    <br />
+    <p>over the course of 10 to 12 days,</p>
+    <p>we walk from inn to inn—lightly, with only a day pack.</p>
+    <p>your belongings are carried ahead. your attention stays here.</p>
+    <br />
+    <p>each day unfolds with a simple rhythm:</p>
+    <p>we <strong>walk</strong>—to move energy, loosen the mind, meet the land.</p>
+    <p>we <strong>talk</strong>—to reflect and be reflected, walking in pairs, rotating partners.</p>
+    <p>we <strong>meditate</strong>—when the silence deepens, when the group feels it.</p>
+    <p>sometimes seated. sometimes standing. always together.</p>
+    <br />
+    <p>but this isn’t a program.</p>
+    <p>there’s no fixed curriculum.</p>
+    <p>the teacher brings their own way—through story, stillness, asana, presence.</p>
+    <p>what happens, happens. what doesn’t, doesn’t need to.</p>
+    <br />
+    <p>some days invite silence. some days laughter.</p>
+    <p>some moments are shared. some are utterly your own.</p>
+    <br />
+    <p>at day’s end, we gather for one conversation around one table.</p>
+    <p>no side talk. no performance. just the circle—whole.</p>
+    <br />
+    <p>when onsens appear on the route, we bathe in them.</p>
+    <p>when shrines appear, we bow in.</p>
+  </div>
+
+  <div id="path77777" class="duck-break" onClick="rubber('準備');">☷☵☲<a href="#準備">☰</a>☲☵☷</div>
+
+  <div id="不">
+    <h3>this is not a vacation</h3>
+    <p>this is deep inner work—with the body as vessel and the road as <strong>mirror</strong>.</p>
+    <p>how far you go inward is up to you.</p>
+    <p>we offer the container. the rest is yours.</p>
+  </div>
+
+  <div id="path777777" class="duck-break" onClick="rubber('準備');">☷☵☲<a href="#準備">☰</a>☲☵☷</div>
+
+  <div id="贈">
+    <h3>the sacred economy</h3>
+    <p>𝕡𝕚𝕝𝕘𝕣𝕚𝕞𝕒𝕖 is sustained by transparency and trust.</p>
+    <p>all shared costs—lodging, meals, transport—are laid open.</p>
+    <p>you pay only your part. nothing added. nothing hidden.</p>
+    <br />
+    <p>beyond that, we invite open giving.</p>
+    <p>not as obligation—but as gratitude.</p>
+    <br />
+    <p>offer what you feel moved to offer:</p>
+    <p>a <strong>donation</strong> to the teacher.</p>
+    <p>a <strong>contribution</strong> to 𝕡𝕚𝕝𝕘𝕣𝕚𝕞𝕒𝕖.</p>
+    <p>a <strong>gift</strong> forward to the next pilgrims who walk this path.</p>
+    <br />
+    <p>this is how we keep walking.</p>
+    <p>this is why we walk at all.</p>
+  </div>
+
+  <div id="path7777777" class="duck-break" onClick="rubber('始');">☷☵☲<a href="#始">☰</a>☲☵☷</div>
+
+  <div id="準備">
+    <h3>ready to walk with us?</h3>
+    <p>and when the pilgrimage ends, something else begins.</p>
+    <p>the walk stays with you.</p>
+    <p>the silence echoes.</p>
+    <p>the presence remains.</p>
+    <br />
+    <p>so if you feel it—</p>
+    <p>that subtle stirring in your chest,</p>
+    <p>that small whisper that says <i>yes</i>—</p>
+    <br />
+    <p>then maybe it’s time.</p>
+    <br />
+    <p>the path has always been before you.</p>
+    <p>now it’s asking you to walk it.</p>
+    <p>come walk the path toward what’s always been before you—</p>
+    <p>together with us.</p>
+  </div>
+
+  <div id="始">
+    <code>the journey of a thousand miles begins with a single step</code>
+    <br />
+    <a href="mailto:enterprise@chiefrubberduck.com?subject=object">
+      <button class="button button--outline duck-break" onClick="duck('link');">
+        <div class="rubber">
+          <span style="--i:1">t</span>
+          <span style="--i:2">a</span>
+          <span style="--i:3">k</span>
+          <span style="--i:4">e</span>
+          <div class="tiny">a</div>
+          <span style="--i:5">s</span>
+          <span style="--i:6">t</span>
+          <span style="--i:7">e</span>
+          <span style="--i:8">p</span>
+        </div>
+        <div class="duck">
+          <span style="--i:1">一</span>
+          <span style="--i:2">歩</span>
+          <span style="--i:3">踏</span>
+          <span style="--i:4">み</span>
+          <span style="--i:5">出</span>
+          <span style="--i:6">す</span>
+        </div>
+      </button>
+    </a>
+    <p>☷☵☲☰☲☵☷</p>
+  </div>
+</div>
+{{ end }}

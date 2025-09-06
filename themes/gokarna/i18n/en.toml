@@ -1,0 +1,16 @@
+[Recent]
+  other = 'Recent'
+[error404]
+  other = 'this does not exist... yet you are'
+[do]
+  other = 'do'
+[home]
+  other = 'home'
+[nothing]
+  other = 'Nothing to see here, yet 😉'
+[previous]
+  other = 'Previous'
+[next]
+  other = 'Next'
+[tags]
+  other = 'Tags'
