@@ -1181,7 +1181,7 @@ img#avatar {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   font-size: 1em;
-  line-height: 0.88em;
+  line-height: 12;
   text-align: center;
   color: var(--accent-color);
   display: inline-block;
@@ -1193,9 +1193,18 @@ img#avatar {
 @keyframes pulsePath {
   0%, 100% {
     transform: translate(-50%, -50%) scale(0.777);
+    box-shadow:
+      -1px 0 3px rgba(179, 51, 46, 0.07),
+       1px 0 3px rgba(179, 51, 46, 0.07);
+    opacity: 0.77;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.08);
+    box-shadow:
+      -3px 0 7px rgba(179, 51, 46, 0.12),
+       3px 0 7px rgba(179, 51, 46, 0.12);
+    opacity: 1;
   }
 }
 
