@@ -500,6 +500,11 @@ table td {
   }
 }
 
+img#avatar {
+  height: 12rem;
+  width: 12rem;
+}
+
 /* Avatar sizes (default is M) - XS, S, M, L, XL */
 .home-about .avatar img.size-xs {
   height: 7rem;
