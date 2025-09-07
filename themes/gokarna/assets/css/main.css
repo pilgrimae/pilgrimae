@@ -580,47 +580,6 @@ img#avatar {
   cursor: wait;
 }
 
-#tao {
-  .duck {
-    color: var(--accent-color)
-  }
-  cursor: zoom-out;
-}
-
-#exp ul li {
-  text-align: left;
-  margin-left: 42%;
-  &.duck {
-    color: var(--accent-color)
-  }
-}
-
-#attr ul li {
-  text-align: left;
-  margin-left: 42%;
-  &.rubber {
-    color: var(--accent-color)
-  }
-}
-
-@media (max-width: 888px) {
-  #exp ul li, #attr ul li {
-    margin-left: 38%;
-  }
-}
-
-@media (max-width: 777px) {
-  #exp ul li, #attr ul li {
-    margin-left: 33%;
-  }
-}
-
-@media (max-width: 666px) {
-  #exp ul li, #attr ul li {
-    margin-left: 27%;
-  }
-}
-
 #始 {
   #personal ul li {
     text-align: left;
@@ -1191,6 +1150,101 @@ img#avatar {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--light-tertiary-color);
+}
+
+.enso-inline {
+  display: inline-block;
+  position: relative;
+  width: 1.4em;
+  height: 1.4em;
+  vertical-align: middle;
+}
+
+.enso-icon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.7;
+  animation: fadeEnso 6s ease-in-out infinite;
+  animation-delay: 1s;
+  filter: invert(32%) sepia(60%) saturate(3600%) hue-rotate(-3deg) brightness(90%) contrast(85%);
+}
+
+@keyframes fadeEnso {
+  0%, 100% { opacity: 0.1; }
+  50%      { opacity: 0.7; }
+}
+
+.middle-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  font-size: 1em;
+  line-height: 0.88em;
+  text-align: center;
+  color: var(--accent-color);
+  display: inline-block;
+  text-shadow: 0.5px 0 transparent;
+  font-family: 'Noto Sans Symbols', 'Segoe UI Symbol', sans-serif;
+  animation: pulsePath 12s ease-in-out infinite;
+}
+
+@keyframes pulsePath {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.777);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.fade {
+  position: relative;
+  display: inline-block;
+  height: 1.1em;
+  width: auto;
+  font-weight: 600;
+}
+
+/* show initial word instantly */
+.fade .initial {
+  position: static;
+  visibility: visible;
+  opacity: 1;
+  display: inline;
+  animation: hideInitial 0.1s ease-in 0.5s forwards;
+}
+
+/* fade-rotator logic */
+.fade span:not(.initial) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeWords 42s infinite ease-in-out;
+  white-space: nowrap;
+}
+
+.fade span:nth-child(2) { animation-delay: 0s; }
+.fade span:nth-child(3) { animation-delay: 6s; }
+.fade span:nth-child(4) { animation-delay: 12s; }
+.fade span:nth-child(5) { animation-delay: 18s; }
+.fade span:nth-child(6) { animation-delay: 24s; }
+.fade span:nth-child(7) { animation-delay: 30s; }
+.fade span:nth-child(8) { animation-delay: 36s; }
+
+/* hide the initial span quickly after load */
+@keyframes hideInitial {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeWords {
+  0%   { opacity: 0; transform: scale(0.98); }
+  10%  { opacity: 1; transform: scale(1); }
+  20%  { opacity: 1; transform: scale(1); }
+  30%  { opacity: 0; transform: scale(0.98); }
+  100% { opacity: 0; }
 }
 
 /* progressbar */
