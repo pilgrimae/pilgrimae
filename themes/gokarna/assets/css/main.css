@@ -1217,7 +1217,7 @@ img#avatar {
 }
 
 /* show initial word instantly */
-.fade .initial {
+.fade .with {
   position: static;
   visibility: visible;
   opacity: 1;
@@ -1226,7 +1226,7 @@ img#avatar {
 }
 
 /* fade-rotator logic */
-.fade span:not(.initial) {
+.fade span:not(.with) {
   position: absolute;
   top: 0;
   left: 0;
