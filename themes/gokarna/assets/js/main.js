@@ -133,6 +133,13 @@ window.addEventListener("scroll", () => {
     markers.forEach((marker) => (marker.style.display = "none"));
   }
 
+  if (
+    scrolled + window.innerHeight >=
+    document.documentElement.scrollHeight - 1
+  ) {
+    gif.style.display = "none";
+  }
+
   if (window.innerWidth <= 820) {
     toggleHeaderShadow(50);
   } else {
