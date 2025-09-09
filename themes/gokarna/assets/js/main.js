@@ -109,6 +109,9 @@ function addProgressMarkers() {
     markerContainer.appendChild(marker);
   });
 }
+
+let lastScroll = window.scrollY;
+let currentRotation = 0;
 window.addEventListener("scroll", () => {
   const progress = document.querySelector(".dharma");
   const gif = document.querySelector(".karma");
@@ -117,15 +120,26 @@ window.addEventListener("scroll", () => {
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   const percentScrolled = Math.min((scrolled / maxScroll) * 100, 100);
 
+  const scrollDelta = scrolled - lastScroll;
+  const scrollDirection =
+    scrollDelta > 0 ? "down" : scrollDelta < 0 ? "up" : null;
+  const rotationStep = Math.abs(scrollDelta) * 1.2;
+
+  if (scrollDirection === "down") {
+    currentRotation += rotationStep;
+  } else if (scrollDirection === "up") {
+    currentRotation -= rotationStep;
+  }
+
+  lastScroll = scrolled;
+
   if (scrolled > 0) {
     progress.style.width = `${percentScrolled}%`;
     gif.style.display = "block";
-    const scrollTop = window.scrollY || window.pageYOffset;
-    const rotation = scrollTop * 0.7;
     const viewportWidth = document.documentElement.clientWidth;
     const position = (percentScrolled * viewportWidth) / 100;
     gif.style.left = `${position - 7}px`;
-    gif.style.transform = `rotate(${rotation}deg)`;
+    gif.style.transform = `rotate(${currentRotation}deg)`;
     markers.forEach((marker) => (marker.style.display = "block"));
   } else {
     progress.style.width = "0%";
