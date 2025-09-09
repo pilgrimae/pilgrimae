@@ -95,11 +95,24 @@ pre {
   border-radius: 50%;
   height: auto;
   object-fit: cover;
-  background: rgb(var(--light-primary-color));
+  background-color: #e0d3c0;
+  content: url("/images/pilgrimae-dark.png");
+}
+
+#avatar:hover {
+  content: url("/images/calligraphy-dark.gif");
+}
+
+.header-nav .avatar img {
+  content: url("/images/pilgrimae-white.png");
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: white;
+}
+
+.karma {
+  content: url("../images/pilgrimae-white.png");
 }
 
 .vritti-tooltip {
@@ -117,4 +130,9 @@ pre {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+}
+
+.vritti.active {
+  background-color: white;
+  width: 7px;
 }

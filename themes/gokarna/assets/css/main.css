@@ -490,7 +490,7 @@ table td {
 }
 
 #avatar:hover {
-  content: url("/images/pilgrimae-dark.png");
+  content: url("/images/calligraphy.gif");
   animation: scale-down 0.777s forwards;
 }
 
@@ -1289,12 +1289,14 @@ img#avatar {
 }
 
 .karma {
-  top: 48px;
-  height: 12px;
+  top: 42px;
+  height: 21px;
   position: fixed;
-  content: url("../images/pilgrimae-dark.png");
+  content: url("../images/pilgrimae.png");
   display: none;
   z-index: 7;
+  transform: rotate(0deg);
+  transition: transform 0.05s linear;
 }
 
 .guru {
@@ -1339,7 +1341,7 @@ img#avatar {
 }
 
 .vritti.active {
-  background-color: #white;
+  background-color: var(--light-tertiary-color);
   width: 7px;
 }
 

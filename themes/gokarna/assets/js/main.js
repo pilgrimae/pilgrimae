@@ -65,7 +65,7 @@ function addProgressMarkers() {
 
   headers.forEach((header) => {
     const markerPosition = Math.min(
-      ((header.offsetTop - headerHeight - 12) / documentHeight) * 100,
+      ((header.offsetTop - headerHeight - 33) / documentHeight) * 100,
       100,
     );
     const marker = document.createElement("div");
@@ -120,9 +120,12 @@ window.addEventListener("scroll", () => {
   if (scrolled > 0) {
     progress.style.width = `${percentScrolled}%`;
     gif.style.display = "block";
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const rotation = scrollTop * 0.7;
     const viewportWidth = document.documentElement.clientWidth;
     const position = (percentScrolled * viewportWidth) / 100;
-    gif.style.left = `${position - 5}px`;
+    gif.style.left = `${position - 7}px`;
+    gif.style.transform = `rotate(${rotation}deg)`;
     markers.forEach((marker) => (marker.style.display = "block"));
   } else {
     progress.style.width = "0%";
