@@ -307,6 +307,7 @@ a:hover .feather-sun {
 }
 #hamburger-menu-toggle {
   display: none;
+  cursor: pointer;
 }
 #hamburger-menu-toggle .feather {
   height: 24px;

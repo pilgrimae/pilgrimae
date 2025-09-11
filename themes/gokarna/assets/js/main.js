@@ -43,17 +43,23 @@ function ready() {
   const svgsToInject = document.querySelectorAll("img.svg-inject");
   SVGInjector(svgsToInject);
 
-  document
-    .getElementById("hamburger-menu-toggle")
-    .addEventListener("click", () => {
-      const hamburgerMenu =
-        document.getElementsByClassName("nav-hamburger-list")[0];
-      if (hamburgerMenu.classList.contains("visibility-hidden")) {
-        hamburgerMenu.classList.remove("visibility-hidden");
-      } else {
-        hamburgerMenu.classList.add("visibility-hidden");
-      }
-    });
+  const hamburgerMenu = document.querySelector(".nav-hamburger-list");
+  const toggleBtn = document.getElementById("hamburger-menu-toggle");
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    hamburgerMenu.classList.toggle("visibility-hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      !hamburgerMenu.classList.contains("visibility-hidden") &&
+      !hamburgerMenu.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      hamburgerMenu.classList.add("visibility-hidden");
+    }
+  });
 }
 
 function addProgressMarkers() {
