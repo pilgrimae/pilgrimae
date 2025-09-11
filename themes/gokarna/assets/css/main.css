@@ -368,7 +368,7 @@ a:hover .feather-sun {
 }
 
 .header-shadow {
-  box-shadow: rgb(220, 220, 220) 0px 1px 5px;
+  box-shadow: rgb(33, 38, 45, 0.3) 0px -1px 7px 0px inset;
 }
 
 /* TAGS */
