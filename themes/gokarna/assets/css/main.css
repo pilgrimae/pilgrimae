@@ -271,7 +271,7 @@ img {
 }
 .nav-link a svg {
   height: 20px;
-  margin: -5px auto;
+  margin: -3px auto;
   stroke-width: 2;
   width: 20px;
 }
@@ -308,13 +308,21 @@ a:hover .feather-sun {
 #hamburger-menu-toggle {
   display: none;
   cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
 }
+
 #hamburger-menu-toggle .feather {
   height: 24px;
+  width: 24px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  width: 24px;
+  position: absolute;
+  top: 7px;
+  left: 0;
 }
+
 .nav-hamburger-list {
   background: rgb(var(--light-primary-color));
   border-bottom: solid 1.5px var(--light-secondary-color);

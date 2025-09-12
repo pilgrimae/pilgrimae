@@ -87,7 +87,7 @@ enableRobotsTXT = true
     identifier = "substack"
     url = "https://patreon.com/pilgrimae"
     weight = 3
-    pre = "<span data-feather='bookmark'></span>"
+    pre = "<span data-feather='feather'></span>"
 
 [outputs]
   home = ["HTML", "RSS"]
