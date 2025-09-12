@@ -483,16 +483,15 @@ table td {
 
 .home-about .avatar img {
   border-radius: 50%;
-  border: 7px double var(--accent-color);
   height: auto;
   object-fit: cover;
   background-image: url(/images/paper.png);
-  animation: scale-up 0.777s forwards;
+  animation: borderglow 3s ease-in-out forwards;
 }
 
 #avatar:hover {
   content: url("/images/calligraphy.gif");
-  animation: scale-down 0.777s forwards;
+  animation: borderless 4s ease-in-out forwards;
 }
 
 @keyframes scale-up {
@@ -511,6 +510,16 @@ table td {
   to {
     transform: scale(1);
   }
+}
+
+@keyframes borderglow {
+  0% { box-shadow: 0 0 0px var(--accent-color); }
+  100% { box-shadow: 0 0 12px var(--accent-color); }
+}
+
+@keyframes borderless {
+  0% { box-shadow: 0 0 12px var(--accent-color); }
+  100% { box-shadow: 0 0 0px var(--accent-color); }
 }
 
 img#avatar {
