@@ -58,7 +58,7 @@ enableRobotsTXT = true
       window.onhashchange = rubber();
       $.getJSON("/data/samadhi.json", function (lines) {
         var samadhi = lines.join("\n");
-        console.log(`%c${samadhi}`, 'background: #2d333b; color: #ebc400')
+        console.log(`%c${samadhi}`, 'color: #b3332e; background: #312e29')
       });
 
       var documentTitle = `pilgrimae ☰ 前路 ☰ `;
