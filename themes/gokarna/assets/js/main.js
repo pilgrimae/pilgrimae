@@ -90,7 +90,10 @@ function addProgressMarkers() {
         .querySelectorAll(".vritti")
         .forEach((m) => m.classList.remove("active"));
       marker.classList.add("active");
-      const scrollTarget = header.offsetTop - headerHeight;
+
+      const rect = header.getBoundingClientRect();
+      const scrollTarget = window.scrollY + rect.top - headerHeight;
+
       window.scrollTo({
         top: scrollTarget,
         behavior: "smooth",
@@ -300,20 +303,34 @@ window.addEventListener("scroll", function () {
   if (!homeContent) return;
 
   const viewportMiddle = window.innerHeight / 2;
+  const maxDistance = 777;
   const descendants = homeContent.querySelectorAll("*");
 
   descendants.forEach((el) => {
     const rect = el.getBoundingClientRect();
 
     if (rect.bottom < viewportMiddle) {
-      const distance = Math.min(viewportMiddle - rect.bottom, 777);
-      const opacity = 1 - distance / 777;
+      const distance = Math.min(viewportMiddle - rect.bottom, maxDistance);
+      const opacity = 1 - distance / maxDistance;
+
       el.style.opacity = opacity;
+
+      const glowIntensity = (1 - opacity) * 7;
+      const dropShadowIntensity = opacity * 7;
+      const dropShadowAlpha = opacity * 0.7;
+
+      el.style.textShadow = `${glowIntensity}px ${glowIntensity}px ${glowIntensity}px rgba(255, 255, 255, ${opacity})`;
+      el.style.filter = `drop-shadow(0 0 ${dropShadowIntensity}px rgba(0, 0, 0, ${dropShadowAlpha}))`;
+      el.style.transform = `translateY(-${(1 - opacity) * 7}px) scale(${opacity * 0.95 + 0.07})`;
     } else {
       el.style.opacity = 1;
+      el.style.textShadow = "none";
+      el.style.filter = "none";
+      el.style.transform = "translateY(0) scale(1)";
     }
   });
 });
+
 const FAVICONS = 4;
 let faviconIndex = 0;
 
