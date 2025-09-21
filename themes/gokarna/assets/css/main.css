@@ -603,6 +603,7 @@ img#avatar {
 
 .home-content {
   text-align: center;
+  transition: opacity 0.777s ease;
 }
 
 .duck-break {

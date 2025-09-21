@@ -295,6 +295,25 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
+window.addEventListener("scroll", function () {
+  const homeContent = document.querySelector(".home-content");
+  if (!homeContent) return;
+
+  const viewportMiddle = window.innerHeight / 2;
+  const descendants = homeContent.querySelectorAll("*");
+
+  descendants.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+
+    if (rect.bottom < viewportMiddle) {
+      const distance = Math.min(viewportMiddle - rect.bottom, 777);
+      const opacity = 1 - distance / 777;
+      el.style.opacity = opacity;
+    } else {
+      el.style.opacity = 1;
+    }
+  });
+});
 const FAVICONS = 4;
 let faviconIndex = 0;
 
