@@ -294,3 +294,24 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true },
   );
 });
+
+const FAVICONS = 4;
+let faviconIndex = 0;
+
+function setFaviconGroup(index) {
+  const png = `/favicon${index}-96x96.png`;
+  const svg = `/favicon${index}.svg`;
+  const ico = `/favicon${index}.ico`;
+  const linkPng = document.querySelector("link[rel='icon'][type='image/png']");
+  if (linkPng) linkPng.href = png;
+  const linkSvg = document.querySelector(
+    "link[rel='icon'][type='image/svg+xml']",
+  );
+  if (linkSvg) linkSvg.href = svg;
+  const linkIco = document.querySelector("link[rel='shortcut icon']");
+  if (linkIco) linkIco.href = ico;
+}
+setInterval(() => {
+  setFaviconGroup(faviconIndex);
+  faviconIndex = (faviconIndex + 1) % FAVICONS;
+}, 3333);
