@@ -729,6 +729,8 @@ img#avatar {
   }
 
   .button {
+    width: 280px;
+    height: 90px;
     padding: 12px 24px;
     font-size: 3rem;
     font-weight: 600;
@@ -760,7 +762,7 @@ img#avatar {
   }
 
   .duck span {
-    font-size: 37px;
+    font-size: 40px;
   }
 
   .button:focus {
