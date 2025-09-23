@@ -7,7 +7,12 @@
     {{ end }}
   </div>
 
-  <h1 class="calligraphy">{{ .Site.Title }}</h1>
+  <div class="calligraphy-wrapper-container">
+    <div class="calligraphy-wrapper">
+      <h1 class="calligraphy calligraphy-header stroke">{{ .Site.Title }}</h1>
+      <h1 class="calligraphy calligraphy-header fill">{{ .Site.Title }}</h1>
+    </div>
+  </div>
   {{ if isset .Site.Params "description" }}
   <h3>{{ .Site.Params.Description }}</h3>
   {{ end }}
@@ -49,7 +54,7 @@
     <p>to walk slowly. to speak honestly. to remember through presence.</p>
     <br />
     <p>we bring together no more than <strong>twelve</strong> souls at a time</p>
-    <p>to walk the sacred paths of <span class="calligraphy">日本</span>—</p>
+    <p>to walk the sacred paths of <span class="calligraphy-text">日本</span>—</p>
     <p>led by 
       <span class="fade">
         <span class="with">Divine Mother</span>
@@ -79,9 +84,9 @@
 
   <div id="歩">
     <h3>the way we walk</h3>
-    <p>in <span class="calligraphy">日本</span>, pilgrimage is encoded in the land.</p>
-    <p><span class="calligraphy">四国</span>’s 88 temples.</p>
-    <p>the ancient trails of <span class="calligraphy">熊野古道</span>.</p>
+    <p>in <span class="calligraphy-text">日本</span>, pilgrimage is encoded in the land.</p>
+    <p><span class="calligraphy-text">四国</span>’s 88 temples.</p>
+    <p>the ancient trails of <span class="calligraphy-text">熊野古道</span>.</p>
     <p>the quiet wisdom that says:</p>
     <code>the environment is greater than one’s will.</code>
     <br />

@@ -93,9 +93,74 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1em;
 }
 
+.calligraphy-text {
+  font-family: 'Pilgrimae', sans-serif;
+  font-weight: 600;
+}
+
 .calligraphy {
   font-family: 'Pilgrimae', sans-serif;
   font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calligraphy-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.calligraphy-wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 42px;
+}
+
+.calligraphy-header {
+  line-height: 1;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+}
+
+.calligraphy.stroke {
+  color: transparent;
+  -webkit-text-stroke: 1.25px var(--accent-color);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.calligraphy.fill {
+  color: var(--accent-color);
+  z-index: 2;
+  animation: pilgrimaeReveal 12s ease-in-out infinite;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+@keyframes pilgrimaeReveal {
+  0% {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+  }
+  40% {
+    clip-path: polygon(0% 60%, 100% 55%, 100% 100%, 0% 100%);
+    opacity: 0.3;
+  }
+  70% {
+    clip-path: polygon(0% 20%, 100% 15%, 100% 100%, 0% 100%);
+    opacity: 0.6;
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    opacity: 1;
+  }
 }
 
 #toc {
@@ -255,6 +320,8 @@ img {
 }
 .nav-title a {
   height: 50px;
+  font-family: 'Pilgrimae', sans-serif;
+  font-weight: 600;
 }
 .header-nav .nav-links {
   float: right;
@@ -363,6 +430,8 @@ a:hover .feather-sun {
 #pilgrimae {
   margin-left: 12px;
   margin-right: 12px;
+  font-family: 'Pilgrimae', sans-serif;
+  font-weight: 600;
 }
 
 /** COMMON **/
@@ -612,71 +681,10 @@ img#avatar {
 }
 
 #始 {
-  #personal ul li {
-    text-align: left;
-    &.duck {
-      color: var(--accent-color)
-    }
-  }
-
-  #enterprise ul li {
-    text-align: left;
-    &.rubber {
-      color: var(--accent-color)
-    }
-  }
-
-  .plan {
-    span {
-      font-size: 2.1rem;
-    }
-    span.per {
-      font-size: 0.7rem;
-      vertical-align: 7px;
-    }
-    span.time {
-      font-size: 0.7rem;
-    }
-  }
-
-  .gift {
-    margin-top: 42px;
-  }
-
-  .equal {
-    font-size: 2rem;
-  }
-
-  .fish {
-    margin-left: 0 !important;
-    text-align: left;
-    cursor: help;
-    display: flex;
-    align-items: center;
-    gap: 0.3em;
-  }
-
-  .fish [data-feather="layers"] {
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    position: relative;
-    top: 0.125em;
-  }
-
-  .reading {
-    width: 216px !important;
-  }
-
   div.tiny {
     display: inline;
     margin: -7px;
     font-size: 0.7rem;
-  }
-
-  .size-42{
-    width: 42px;
-    height: 42px;
   }
 
   /* container */
