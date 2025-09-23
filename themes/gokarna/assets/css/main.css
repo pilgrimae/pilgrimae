@@ -140,26 +140,54 @@ h1, h2, h3, h4, h5, h6 {
 .calligraphy.fill {
   color: var(--accent-color);
   z-index: 2;
-  animation: pilgrimaeReveal 12s ease-in-out infinite;
+  animation: pilgrimaeBreath 12s cubic-bezier(0.33, 0.01, 0.68, 1) infinite;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
-@keyframes pilgrimaeReveal {
+@keyframes pilgrimaeBreath {
   0% {
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     opacity: 0;
   }
-  40% {
-    clip-path: polygon(0% 60%, 100% 55%, 100% 100%, 0% 100%);
-    opacity: 0.3;
+  10% {
+    clip-path: polygon(0% 80%, 100% 77%, 100% 100%, 0% 100%);
+    opacity: 0.2;
   }
-  70% {
-    clip-path: polygon(0% 20%, 100% 15%, 100% 100%, 0% 100%);
+  20% {
+    clip-path: polygon(0% 60%, 100% 55%, 100% 100%, 0% 100%);
+    opacity: 0.4;
+  }
+  30% {
+    clip-path: polygon(0% 40%, 100% 35%, 100% 100%, 0% 100%);
     opacity: 0.6;
   }
-  100% {
+  40% {
+    clip-path: polygon(0% 20%, 100% 15%, 100% 100%, 0% 100%);
+    opacity: 0.8;
+  }
+  50% {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     opacity: 1;
+  }
+  60% {
+    clip-path: polygon(0% 20%, 100% 15%, 100% 100%, 0% 100%);
+    opacity: 0.8;
+  }
+  70% {
+    clip-path: polygon(0% 40%, 100% 35%, 100% 100%, 0% 100%);
+    opacity: 0.6;
+  }
+  80% {
+    clip-path: polygon(0% 60%, 100% 55%, 100% 100%, 0% 100%);
+    opacity: 0.4;
+  }
+  90% {
+    clip-path: polygon(0% 80%, 100% 77%, 100% 100%, 0% 100%);
+    opacity: 0.2;
+  }
+  100% {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
   }
 }
 
