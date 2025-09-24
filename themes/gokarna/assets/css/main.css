@@ -8,6 +8,9 @@
   --light-text-color: black;
 
   --dark-primary-color: 34, 36, 54;
+
+  --glow-base: #d33682;
+  --glow-color: #f4c2c2;
 }
 
 @font-face {
@@ -144,6 +147,89 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   animation: pilgrimaeBreath 12s cubic-bezier(0.33, 0.01, 0.68, 1) infinite;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.calligraphy.glow {
+  color: var(--accent-color);
+  filter: blur(4px);
+  opacity: 0;
+  animation: pilgrimaeAura 12s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pilgrimaeAura {
+  0% {
+    opacity: 0;
+    filter: blur(2px);
+    text-shadow: none;
+  }
+  10% {
+    opacity: 0.2;
+    filter: blur(3px);
+    text-shadow: 0 0 4px var(--glow-color, var(--glow-base));
+  }
+  20% {
+    opacity: 0.4;
+    filter: blur(4px);
+    text-shadow:
+      0 0 6px var(--glow-color, var(--glow-base)),
+      0 0 8px var(--glow-color, var(--glow-base));
+  }
+  30% {
+    opacity: 0.6;
+    filter: blur(5px);
+    text-shadow:
+      0 0 8px var(--glow-color, var(--glow-base)),
+      0 0 12px var(--glow-color, var(--glow-base));
+  }
+  40% {
+    opacity: 0.8;
+    filter: blur(6px);
+    text-shadow:
+      0 0 12px var(--glow-color, var(--glow-base)),
+      0 0 20px var(--glow-color, var(--glow-base));
+  }
+  50% {
+    opacity: 1;
+    filter: blur(7px);
+    text-shadow:
+      0 0 16px var(--glow-color, var(--glow-base)),
+      0 0 32px var(--glow-color, var(--glow-base)),
+      0 0 48px var(--glow-color, var(--glow-base));
+  }
+  60% {
+    opacity: 0.8;
+    filter: blur(6px);
+    text-shadow:
+      0 0 12px var(--glow-color, var(--glow-base)),
+      0 0 20px var(--glow-color, var(--glow-base));
+  }
+  70% {
+    opacity: 0.6;
+    filter: blur(5px);
+    text-shadow:
+      0 0 8px var(--glow-color, var(--glow-base)),
+      0 0 12px var(--glow-color, var(--glow-base));
+  }
+  80% {
+    opacity: 0.4;
+    filter: blur(4px);
+    text-shadow:
+      0 0 6px var(--glow-color, var(--glow-base)),
+      0 0 8px var(--glow-color, var(--glow-base));
+  }
+  90% {
+    opacity: 0.2;
+    filter: blur(3px);
+    text-shadow:
+      0 0 4px var(--glow-color, var(--glow-base));
+  }
+  100% {
+    opacity: 0;
+    filter: blur(2px);
+    text-shadow: none;
+  }
 }
 
 @keyframes pilgrimaeBreath {
