@@ -296,6 +296,18 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: true },
   );
+
+  const subtitle = document.querySelector(".footstep");
+  if (!subtitle) return;
+  const text = subtitle.textContent.trim();
+  subtitle.innerHTML = "";
+
+  [...text].forEach((char, i) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.style.setProperty("--i", i);
+    subtitle.appendChild(span);
+  });
 });
 
 window.addEventListener("scroll", function () {
