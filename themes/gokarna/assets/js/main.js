@@ -304,8 +304,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   [...text].forEach((char, i) => {
     const span = document.createElement("span");
-    span.textContent = char;
     span.style.setProperty("--i", i);
+
+    if (char === " ") {
+      span.innerHTML = "&nbsp;";
+    } else {
+      span.textContent = char;
+    }
+
     subtitle.appendChild(span);
   });
 });

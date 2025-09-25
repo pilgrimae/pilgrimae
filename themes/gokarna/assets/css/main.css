@@ -283,26 +283,50 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   letter-spacing: 0.05em;
   white-space: pre-wrap;
+  word-break: keep-all;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
 }
 
 .footstep span {
   display: inline-block;
-  opacity: 0.4;
+  opacity: 0.7;
   transition: all 0.3s ease;
-  animation: footstepGlow 12s infinite;
-  animation-delay: calc(var(--i) * 0.12s);
+  animation: footstepGlow 12s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.15s);
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95)
 }
 
 @keyframes footstepGlow {
   0%, 100% {
-    opacity: 0.3;
     transform: translateY(0);
     text-shadow: none;
+    opacity: 0.66;
+  }
+  20% {
+    transform: translateY(-0.7px);
+    text-shadow: 0 0 1px var(--accent-color, --light-secondary-color);
+    opacity: 0.77;
+  }
+  40% {
+    transform: translateY(-1.4px);
+    text-shadow: 0 0 2px var(--accent-color, --light-secondary-color);
+    opacity: 0.88;
   }
   50% {
-    opacity: 1;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     text-shadow: 0 0 3px var(--accent-color, --light-secondary-color);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-1.4px);
+    text-shadow: 0 0 2px var(--accent-color, --light-secondary-color);
+    opacity: 0.88;
+  }
+  80% {
+    transform: translateY(-0.7px);
+    text-shadow: 0 0 1px var(--accent-color, --light-secondary-color);
+    opacity: 0.77;
   }
 }
 
